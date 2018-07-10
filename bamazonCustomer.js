@@ -21,8 +21,8 @@ function readtable() {
     connection.query("SELECT * FROM " + tbl, function(err, res) {
         if (err) throw err;
 
+        console.log('=================================================');
         for (var i=0; i<res.length; i++){
-            console.log('=================================================');
             console.log(res[i].item_id + " | " + res[i].product_name + " | " + res[i].price)
         }
         console.log('=================================================');
