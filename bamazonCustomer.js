@@ -38,14 +38,29 @@ inquirer
             // The first should ask them the ID of the product they would like to buy.   
             name: "selectId", 
             type: "input",
-            message: "Please provide the ID of the products you would like to buy."
+            message: "Please provide the ID of the products you would like to buy.",
+            validate: function (value){
+                if (value.match(/^[0-9]+$/)) {
+                    return true
+                }
+                    return "Please enter a valid product ID"
+                }
+
+            
       
         },
         {
             // The second message should ask how many units of the product they would like to buy.
             name: "selectQuantity",
             type: "input",
-            message: "How many units would you like to order?"
+            message: "How many units would you like to order?",
+            validate: function (value){
+                if (value.match(/^[0-9]+$/)) {
+                    return true
+                }
+                    return "Please enter a valid quantity number"
+                }
+            
 
         }
     ])
